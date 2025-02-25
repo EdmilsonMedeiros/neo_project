@@ -1,0 +1,29 @@
+@import "https://cdn.datatables.net/2.2.1/css/dataTables.dataTables.css";
+
+.modal-header {
+    border-bottom: none !important;
+}
+
+.modal-footer {
+    border-top: none !important;
+}
+
+button.dt-paging-button {
+    background-color: #f1f1f1 !important;
+    border: none !important;
+    border-radius: 50px !important;
+}
+
+.dt-input {
+    border-radius: 0.5em !important;
+    padding: 0.5em !important;
+    border: 1px solid #d0d0d0 !important;
+}
+
+#dt-length-0 {
+    margin-right: 0.5em;
+}
+
+.dt-paging-button.current {
+    background-color: #c0c0c0 !important;
+}
