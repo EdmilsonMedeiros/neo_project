@@ -227,14 +227,16 @@ export default {
         },
 
         async reloadTable() {
-            this.reloadTableValue = !this.reloadTableValue;
-            setTimeout(() => {
-                this.reloadTableValue = !this.reloadTableValue;
-            }, 1);
+            this.reloadTableValue = false;
+            await this.getRegisters(); // Busca os dados atualizados
+            this.reloadTableValue = true;
 
-            setTimeout(() => {
-                this.checkBoxesOnReload();
-            }, 2);
+            // Atualiza os checkboxes se necessário
+            if (this.checkBoxes) {
+                setTimeout(() => {
+                    this.checkBoxesOnReload();
+                }, 10);
+            }
         },
 
         async checkBoxesOnReload() {

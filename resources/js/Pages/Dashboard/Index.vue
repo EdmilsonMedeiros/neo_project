@@ -2,7 +2,7 @@
     <Layout> </Layout>
     <div class="container-fluid">
         <LinkCard
-            title="Link card"
+            title="Usuários"
             description="Gerencie os usuários aqui."
             url="/users"
         />

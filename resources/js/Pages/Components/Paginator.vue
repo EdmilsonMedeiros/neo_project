@@ -8,8 +8,8 @@
             </li>
             <li class="page-item" :class="{ disabled: currentPage === 1 }">
                 <a class="page-link" href="#" @click.prevent="goToPreviousPage"
-                    >Anterior</a
-                >
+                    ><i class="bi bi-arrow-left"></i
+                ></a>
             </li>
             <li
                 v-for="page in pages"
@@ -26,8 +26,8 @@
                 :class="{ disabled: currentPage === totalPages }"
             >
                 <a class="page-link" href="#" @click.prevent="goToNextPage"
-                    >Próxima</a
-                >
+                    ><i class="bi bi-arrow-right"></i
+                ></a>
             </li>
             <li
                 class="page-item"

@@ -26,10 +26,15 @@ Route::middleware(['auth', 'log'])->group(function(){
     Route::get('/logOut', [AuthController::class, "logOut"])->name('logOut');
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
-    Route::prefix('users')->middleware('admin')->group(function(){
+    Route::prefix('users')->group(function(){
         Route::get('/', [UserController::class, 'index'])->name('users.index');
         ROute::put('permissions/sync/{user}', [UserController::class, 'permissionsSync'])->name('users.permissions.sync');
         Route::post('/getUsers', [UserController::class, 'getUsers'])->name('users.getUsers');
+        Route::get('/create', [UserController::class, 'create'])->name('users.create');
+        Route::post('/store', [UserController::class, 'store'])->name('users.store');
+        Route::delete('/{user}', [UserController::class, 'destroy'])->name('users.destroy');
+        Route::get('/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
+        Route::put('/{user}/update', [UserController::class, 'update'])->name('users.update');
     });
 
     Route::prefix('orders')->group(function(){
